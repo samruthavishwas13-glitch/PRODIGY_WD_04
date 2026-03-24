@@ -1,0 +1,191 @@
+:root {
+    --bg: #08080a;
+    --card: #121214;
+    --cyan: #00f2ff;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.cursor-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    width: 95%;
+    max-width: 1100px;
+    padding: 20px;
+}
+
+
+/* THE UNIFORM GRID */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Equal Columns */
+    grid-auto-rows: 200px;
+    /* Uniform Row Height */
+    gap: 15px;
+}
+
+.tile {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.tile:hover {
+    border-color: var(--cyan);
+    background: #18181b;
+}
+
+
+/* Grid Positioning */
+
+.hero {
+    grid-column: span 2;
+}
+
+.contact-box {
+    grid-column: span 1;
+}
+
+.tech-stack {
+    grid-column: span 1;
+}
+
+.experience {
+    grid-column: span 1;
+}
+
+.hackathons {
+    grid-column: span 1;
+}
+
+.certifications {
+    grid-column: span 2;
+}
+
+.cta-box {
+    grid-column: span 1;
+    cursor: pointer;
+    background: var(--cyan);
+    color: black;
+}
+
+
+/* Content Styles */
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.badge {
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--cyan);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+}
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.email-link:hover {
+    color: var(--cyan);
+}
+
+.pill-container span {
+    background: #1c1c1e;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    margin: 3px;
+    display: inline-block;
+    border: 1px solid #333;
+}
+
+.cert-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cert-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.8rem;
+    border: 1px solid var(--border);
+}
+
+.cert-card i {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--cyan);
+    margin-bottom: 5px;
+}
+
+.trophy-icon {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 2.5rem;
+    opacity: 0.1;
+}
+
+.cta-box h3,
+.cta-box p {
+    color: black;
+}
+
+.cta-box i {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
